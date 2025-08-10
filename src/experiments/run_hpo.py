@@ -45,6 +45,8 @@ def objective(trial: optuna.trial.Trial, base_config: dict) -> float:
             history = tuner.trainer.state.log_history
             # find last logged 'loss'
             train_losses = [x["loss"] for x in history if "loss" in x]
+            if not train_losses:
+                raise ValueError("No 'loss' metric found in log history.")
             eval_loss = train_losses[-1]
         mlflow.log_metric("hpo_eval_loss", eval_loss)
 
