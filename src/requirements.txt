@@ -1,0 +1,10 @@
+torch==2.7.1
+transformers==4.54.1
+numpy==2.3.2
+trl==0.20.0
+mlflow==3.1.4
+mlflow-skinny==3.1.4
+optuna==4.4.0
+datasets==4.0.0
+peft==0.17.0
+python-dotenv==1.1.1
